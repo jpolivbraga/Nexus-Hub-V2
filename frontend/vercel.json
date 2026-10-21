@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://nexus-hub-v2.onrender.com/api/:path*"
+    }
+  ]
+}

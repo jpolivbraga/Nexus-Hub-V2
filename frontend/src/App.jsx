@@ -167,14 +167,10 @@ function App() {
     }
   }, [realTimeAlert]);
 
-  // WebSocket setup for real-time updates
-  useEffect(() => {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = window.location.host;
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const brokerUrl = isLocalhost 
-      ? 'ws://localhost:8080/ws/websocket' 
-      : `${protocol}//${host}/ws/websocket`;
+  const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const brokerUrl = isLocalhost
+  ? 'ws://localhost:8080/ws/websocket'
+  : 'wss://SEU-BACKEND.onrender.com/ws/websocket';
     
     console.log('Connecting to WebSocket broker at:', brokerUrl);
     
